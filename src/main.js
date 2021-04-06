@@ -21,19 +21,17 @@ function createSplashScreen() {
 
   document.body.appendChild(splashScreen);
   const startButton = splashScreen.querySelector("button");
-  startButton.addEventListener("click", function () {
-    startGame();//arrowfunction
-  });
-};
+  startButton.addEventListener("click", startGame);
+}
 
 function removeSplashScreen() {
   splashScreen.remove();
-};
+}
 
 //gameScreen
 function createGameScreen() {
   gameScreen = buildDom(`
-    <main class="game-container">
+    <main class="game container">
         <header>
             <div class="lives">
                 <span class="label"><b>LOST COCONUTS</b></span>
@@ -49,8 +47,8 @@ function createGameScreen() {
         </div>
     </main>
 `);
-document.body.appendChild(gameScreen);
-return gameScreen;
+  document.body.appendChild(gameScreen);
+  return gameScreen;
 };
 
 function removeGameScreen() {
@@ -58,19 +56,39 @@ function removeGameScreen() {
 };
 
 //gameOverScreen
-function createGameOverScreen() {}
-function removeGameOverScreen() {}
+function createGameOverScreen(score) {
+  gameOverScreen = buildDom(`
+  <main>
+      <h1>GAME OVER</h1>
+      <p>Your score: <span>${score}</span> </p>
+      <button>Restart</button>
+  </main>
+  `);
+  const button = gameOverScreen.querySelector("button");
+  button.addEventListener("click", startGame);
+
+  document.body.appendChild(gameOverScreen);
+};
+
+function removeGameOverScreen() {
+  gameOverScreen.remove();
+};
 
 //Setting the game state - start or game over
 function startGame() {
   removeSplashScreen();
-  createGameScreen();
+  if(gameOverScreen){
+    removeGameOverScreen();
+  } createGameScreen();
 
   game = new Game(gameScreen);
   game.start();
 };
 
-function endGame(score) {}
+function endGame(score) {
+  removeGameScreen();
+  createGameOverScreen(score);
+};
 
 //Protection to run in the order correctly
 window.addEventListener("load", createSplashScreen);

@@ -5,7 +5,7 @@ class Coconut{
         this.ctx = this.canvas.getContext("2d");
 
         this.size = 50;
-        this.y = this.canvas.height - this.canvas.height + 70;//swallow position
+        this.y = 70;//swallow position
         this.x = positionY//swallow position
 
         this.speed = speed;
@@ -22,9 +22,9 @@ class Coconut{
     }
 
     isInsideScreen(){
-        const enemyLeft = this.x; // enemyRight =this.x + this.size;
-        const screenRight = this.x.width;
-        const isInside = enemyLeft <  screenRight;
+        const coconutTop = this.y; // enemyRight =this.x + this.size;
+        const screenBottom = this.canvas.height;
+        const isInside = coconutTop <  screenBottom;
         return isInside; //return this.x > 0;
     }
 }

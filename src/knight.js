@@ -22,10 +22,10 @@ class Knight{
     }
 
     updatePosition(){
-        this.x = this.y + this.direction * this.speed;//if it would be up and down it would be this.y
+        this.x += this.direction * this.speed;//if it would be up and down it would be this.y
     }
 
-    handleScreenCollsion(){
+    handleScreenCollision(){
         const screenLeft = 0;//screenTop
         const screenRight = this.canvas.width;//screenBottom = this.canvas.height
 
