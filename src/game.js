@@ -39,16 +39,6 @@ class Game {
   }
 
   startLoop() {
-    const loopS = () => {
-      if (this.swallows.length < 2) {
-        if (Math.random() > 0.98) {
-          const randomY = Math.floor((this.canvas.width - 20) * Math.random());
-          const newSwallow = new Swallow(this.canvas, randomY, 5);
-          this.swallows.push(newSwallow);
-        }
-      }
-    };
-
     const loop = () => {
       if (this.coconuts.length < 10) {
         if (Math.random() > 0.98) {
@@ -57,19 +47,19 @@ class Game {
           this.coconuts.push(newCoconut);
         }
       }
-      if (this.swallows.length < 2) {
+      if (this.swallows.length < 5) {
         if (Math.random() > 0.98) {
-          const randomY = Math.floor((this.canvas.width - 20) * Math.random());
-          const newSwallow = new Swallow(this.canvas, randomY, 5);
+          const randomY = Math.floor((this.canvas.width - 150) * Math.random());
+          const newSwallow = new Swallow(this.canvas, 5);
           this.swallows.push(newSwallow);
         }
       }
       this.checkCollisions();
-      console.log(this.swallows);
       this.knight.updatePosition();
       this.knight.handleScreenCollision();
       this.swallows = this.swallows.filter((swallow) => {
         swallow.updatePosition();
+        console.log(swallow);
         return swallow.isInsideScreen();
       });
       this.coconuts = this.coconuts.filter((coconut) => {
@@ -94,7 +84,7 @@ class Game {
       this.updateGameStats();
     };
     loop();
-    loopS();
+
   }
 
   checkCollisions() {

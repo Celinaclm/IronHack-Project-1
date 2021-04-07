@@ -9,7 +9,7 @@ class Knight{
         this.width = 120;
         this.height = 200;
         this.image = document.createElement("img");
-        this.image.src = "img/knight.png";
+        this.image.src = "/img/knight.png";
         this.x = canvas.width/2 - this.width/2;
         this.y = canvas.height - 200;
 

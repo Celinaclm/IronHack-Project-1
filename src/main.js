@@ -9,14 +9,13 @@ function buildDom(htmlString) {
   tempDiv.innerHTML = htmlString;
   return tempDiv.children[0];
 }
-
+/* */
 //splashScreen
-//        <img id="knight" src="img/knight.png" alt="knight">
 function createSplashScreen() {
   splashScreen = buildDom(`
-    <main>
+    <main class="main1">
         <h1><b>KNIGHT VS COCONUTS</b></h1>
-        <button>START</button>
+        <div><button id="start-button">START</button></div>
     </main>
 `);
 
@@ -35,11 +34,11 @@ function createGameScreen() {
     <main class="game container">
         <header id="lives-score">
             <div class="lives">
-                <span class="label"><b>LIVES</b></span>
+                <span class="label"><b>. . . LIVES</b></span>
                 <span class="value"></span>
             </div>
             <div class="score">
-                <span class="label"><b>SCORE</b></span>
+                <span class="label"><b>. . . SCORE</b></span>
                 <span class="value"></span>
             </div>
             <img id="palmtree" src="img/palmtree.png" alt="palmtree">
@@ -51,46 +50,47 @@ function createGameScreen() {
 `);
   document.body.appendChild(gameScreen);
   return gameScreen;
-};
+}
 
 function removeGameScreen() {
   gameScreen.remove();
-};
+}
 
 //gameOverScreen
 function createGameOverScreen(score) {
   gameOverScreen = buildDom(`
-  <main>
-      <h1>SORRY M'LORD<br>YOU HAVE BEEN HIT BY TOO MANY COCONUTS!</h1>
+  <main class="main2">
+      <h2>SORRY M'LORD<br>YOU HAVE BEEN HIT BY TOO MANY COCONUTS!</h2>
       <p><b>FINAL SCORE </b><span>${score}</span> </p>
-      <button>Restart</button>
+      <div><button id="end-button">TRY AGAIN</button></div>
   </main>
   `);
   const button = gameOverScreen.querySelector("button");
   button.addEventListener("click", startGame);
 
   document.body.appendChild(gameOverScreen);
-};
+}
 
 function removeGameOverScreen() {
   gameOverScreen.remove();
-};
+}
 
 //Setting the game state - start or game over
 function startGame() {
   removeSplashScreen();
-  if(gameOverScreen){
+  if (gameOverScreen) {
     removeGameOverScreen();
-  } createGameScreen();
+  }
+  createGameScreen();
 
   game = new Game(gameScreen);
   game.start();
-};
+}
 
 function endGame(score) {
   removeGameScreen();
   createGameOverScreen(score);
-};
+}
 
 //Protection to run in the order correctly
 window.addEventListener("load", createSplashScreen);

@@ -1,8 +1,7 @@
 ---
 
 ---
-
-<img src="/home/celinaclm/Desktop/Ironhack/Week2/Project1/img/coconuts.png" style="zoom:25%;" /> **# Project 1 | KNIGHT VS COCONUTS**
+ **# Project 1 | KNIGHT VS COCONUTS**
 
 
 
@@ -118,19 +117,6 @@ gameScreen => gameOverScreen
 
 gameoverScreen => gameScreen
 
-
-
-
-
-**## Task:**
-
-
-
-
-
-
-
-**## Link:**
 
 
 

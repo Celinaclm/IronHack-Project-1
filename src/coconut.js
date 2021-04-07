@@ -8,7 +8,7 @@ class Coconut{
         this.y = 70;//swallow position
         this.x = positionY//swallow position
         this.image = document.createElement("img");
-        this.image.src = "img/coconuts.png";
+        this.image.src = "/img/coconuts.png";
         this.speed = speed;
     }
 
