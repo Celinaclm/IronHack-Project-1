@@ -1,86 +1,143 @@
-# Project 1 | KNIGHT VS COCONUTS
+---
+
+---
+
+<img src="/home/celinaclm/Desktop/Ironhack/Week2/Project1/img/coconuts.png" style="zoom:25%;" /> **# Project 1 | KNIGHT VS COCONUTS**
 
 
 
-## Description:
+
+
+**## Description:**
+
+
 
 You are a knight who must avoid the coconuts thrown by swallows... european or africans?
 
 
 
-## MVP:
+
+
+**## MVP:**
+
 Main classes: 
-    .main
-    .game
-    .knight
-    .coconuts
-    .swallows.
+
+- main
+- game
+- knight
+- coconuts
+- swallows
+
 3 states:   
-    .splashScreen
-    .gameScreen
-    .gameOverScreen.
+
+- splashScreen
+- gameScreen
+- gameOverScreen
+
 Lives and score:
-    .gameScreen
-    .gameOverScreen
+
+- gameScreen
+- gameOverScreen
+
 2 buttons:
-    .splashScreen to gameScreen
-    .gameOverScreen to gameScreen
+
+- splashScreen to gameScreen
+- gameOverScreen to gameScreen
+
 Images:
-    .knight
-    .coconuts
-    .background
+
+- knight
+- coconuts
+- swallows
+- background
+- palmtree in gameScreen
 
 
 
-## Backlog:
+**## Backlog:**
+
+
 
 Add audio effects
 
+
+
 State "you win"
+
+
 
 Mode pausa
 
 
 
-## Data Structure:
+
+
+**## Data Structure:**
+
+
 
 Class main
 
+
+
 Class game
+
+
 
 Class player
 
+
+
 Class enemy
 
-Class coconut
+
+
+Class coconuts
+
+
+
+Class swallows
 
 Methods
 
 
 
-## States and States Transitions:
 
-splashScreen
 
-gameScreen
-
-gameoverScreen
+**## States and States Transitions:**
 
 
 
-## Task:
+splashScreen => gameScreen
+
+
+
+gameScreen => gameOverScreen
+
+
+
+gameoverScreen => gameScreen
 
 
 
 
 
-## Link:
+**## Task:**
 
 
 
-## Trello:
 
-**Link url:**
+
+
+
+**## Link:**
+
+
+
+
+
+**## Trello:**
+
+
 
 https://trello.com/b/ZYm315ap/project-1
-
