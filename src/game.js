@@ -40,8 +40,8 @@ class Game {
 
   startLoop() {
     const loop = () => {
-      if (this.coconuts.length < 10) {
-        if (Math.random() > 0.98) {
+      if (this.coconuts.length < 50) {
+        if (Math.random() > 0.90) {
           const randomY = Math.floor((this.canvas.width - 20) * Math.random());
           const newCoconut = new Coconut(this.canvas, randomY, 5);
           this.coconuts.push(newCoconut);

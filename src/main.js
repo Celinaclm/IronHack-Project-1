@@ -14,7 +14,7 @@ function buildDom(htmlString) {
 function createSplashScreen() {
   splashScreen = buildDom(`
     <main class="main1">
-        <h1><b>KNIGHT VS COCONUTS</b></h1>
+        <h1><b>KNIGHT VERSUS COCONUTS</b></h1>
         <div><button id="start-button">START</button></div>
     </main>
 `);
