@@ -11,14 +11,17 @@ html {
   }
   
   body {
+    background: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
     margin: 0;
     padding: 0;
   }
   
   /* ---- typography ---- */
-  
+  /* rgb(0, 217, 255);*/
   body {
-    color: #111;
+    color: black;   
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 32px;
     line-height: 147%;
@@ -40,9 +43,21 @@ html {
     margin: 0 20px;
   }
   
+  #palmtree {
+    width: 700px;
+    height: 1000px;
+    position: relative;
+    top: 750px;
+  }
+/* revisar borde */
+  #lives-score{
+    border: 30px solid white;
+    position:static;
+    top: 5%;
+  }
+
   @media (min-width: 768px) {
     .container {
-      max-width: 728px; /* Resizes the container to 728px for large screens */
       margin: 0 auto;
     }
   }
@@ -80,4 +95,5 @@ html {
   
   .game .canvas-container {
     flex: 1;
+    z-index: 5;
   }

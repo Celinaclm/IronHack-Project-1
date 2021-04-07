@@ -11,6 +11,7 @@ function buildDom(htmlString) {
 }
 
 //splashScreen
+//        <img id="knight" src="img/knight.png" alt="knight">
 function createSplashScreen() {
   splashScreen = buildDom(`
     <main>
@@ -32,15 +33,16 @@ function removeSplashScreen() {
 function createGameScreen() {
   gameScreen = buildDom(`
     <main class="game container">
-        <header>
+        <header id="lives-score">
             <div class="lives">
-                <span class="label"><b>LOST COCONUTS</b></span>
+                <span class="label"><b>LIVES</b></span>
                 <span class="value"></span>
             </div>
             <div class="score">
-                <span class="label"><b>YOUR COCONUTS</b></span>
-                <Span class="value"></Span>
+                <span class="label"><b>SCORE</b></span>
+                <span class="value"></span>
             </div>
+            <img id="palmtree" src="img/palmtree.png" alt="palmtree">
         </header>
         <div class="canvas-container">
             <canvas></canvas>
@@ -59,8 +61,8 @@ function removeGameScreen() {
 function createGameOverScreen(score) {
   gameOverScreen = buildDom(`
   <main>
-      <h1>GAME OVER</h1>
-      <p>Your score: <span>${score}</span> </p>
+      <h1>SORRY M'LORD<br>YOU HAVE BEEN HIT BY TOO MANY COCONUTS!</h1>
+      <p><b>FINAL SCORE </b><span>${score}</span> </p>
       <button>Restart</button>
   </main>
   `);

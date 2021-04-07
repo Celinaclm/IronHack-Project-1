@@ -9,8 +9,26 @@ You are a knight who must avoid the coconuts thrown by swallows... european or a
 
 
 ## MVP:
-
-
+Main classes: 
+    .main
+    .game
+    .knight
+    .coconuts
+    .swallows.
+3 states:   
+    .splashScreen
+    .gameScreen
+    .gameOverScreen.
+Lives and score:
+    .gameScreen
+    .gameOverScreen
+2 buttons:
+    .splashScreen to gameScreen
+    .gameOverScreen to gameScreen
+Images:
+    .knight
+    .coconuts
+    .background
 
 
 

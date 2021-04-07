@@ -6,11 +6,12 @@ class Knight{
 
         this.lives = lives;//lost coconuts
 
-        this.width = 50;
-        this.height = 100;
-
+        this.width = 120;
+        this.height = 200;
+        this.image = document.createElement("img");
+        this.image.src = "img/knight.png";
         this.x = canvas.width/2 - this.width/2;
-        this.y = canvas.height - 100;
+        this.y = canvas.height - 200;
 
         this.direction = 0;
         this.speed = 5;
@@ -41,8 +42,9 @@ class Knight{
     }
 
     draw(){
-        this.ctx.fillStyle = "#66D3FA";//change * sprite
-        this.ctx.fillRect(this.x, this.y, this.width, this.height)
+        this.ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
+//        this.ctx.fillStyle = "#66D3FA";//change * sprite
+//        this.ctx.fillRect(this.x, this.y, this.width, this.height)
     }
 
     didCollide(coconut){//coconut=enemy

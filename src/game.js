@@ -7,7 +7,7 @@ class Game {
     this.knight = null;
     this.gameIsOver = false;
     this.gameScreen = gameScreen;
-    this.score = 0; //this.score
+    this.score = 0;
     this.lostCoconuts = undefined; //this.livesElement
     this.yourCoconuts = undefined; //this.scoreElement
   }
@@ -39,19 +39,39 @@ class Game {
   }
 
   startLoop() {
+    const loopS = () => {
+      if (this.swallows.length < 2) {
+        if (Math.random() > 0.98) {
+          const randomY = Math.floor((this.canvas.width - 20) * Math.random());
+          const newSwallow = new Swallow(this.canvas, randomY, 5);
+          this.swallows.push(newSwallow);
+        }
+      }
+    };
+
     const loop = () => {
       if (this.coconuts.length < 10) {
-        if ((Math.random() > 0.98)) {
+        if (Math.random() > 0.98) {
           const randomY = Math.floor((this.canvas.width - 20) * Math.random());
           const newCoconut = new Coconut(this.canvas, randomY, 5);
           this.coconuts.push(newCoconut);
         }
       }
-
+      if (this.swallows.length < 2) {
+        if (Math.random() > 0.98) {
+          const randomY = Math.floor((this.canvas.width - 20) * Math.random());
+          const newSwallow = new Swallow(this.canvas, randomY, 5);
+          this.swallows.push(newSwallow);
+        }
+      }
       this.checkCollisions();
-
+      console.log(this.swallows);
       this.knight.updatePosition();
       this.knight.handleScreenCollision();
+      this.swallows = this.swallows.filter((swallow) => {
+        swallow.updatePosition();
+        return swallow.isInsideScreen();
+      });
       this.coconuts = this.coconuts.filter((coconut) => {
         coconut.updatePosition();
         return coconut.isInsideScreen();
@@ -60,6 +80,9 @@ class Game {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
       this.knight.draw();
+      this.swallows.forEach((swallow) => {
+        swallow.draw();
+      });
       this.coconuts.forEach((coconut) => {
         coconut.draw();
       });
@@ -71,6 +94,7 @@ class Game {
       this.updateGameStats();
     };
     loop();
+    loopS();
   }
 
   checkCollisions() {
@@ -96,6 +120,6 @@ class Game {
   updateGameStats() {
     this.score += 10;
     this.lostCoconuts.innerHTML = this.knight.lives;
-    this.yourCoconuts.innerHTML = this.knight.core;
+    this.yourCoconuts.innerHTML = this.score;
   }
 }
