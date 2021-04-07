@@ -47,8 +47,8 @@ class Game {
           this.coconuts.push(newCoconut);
         }
       }
-      if (this.swallows.length < 5) {
-        if (Math.random() > 0.98) {
+      if (this.swallows.length < 20) {
+        if (Math.random() > 0.99) {
           const randomY = Math.floor((this.canvas.width - 150) * Math.random());
           const newSwallow = new Swallow(this.canvas, 5);
           this.swallows.push(newSwallow);
@@ -84,7 +84,6 @@ class Game {
       this.updateGameStats();
     };
     loop();
-
   }
 
   checkCollisions() {
