@@ -60,7 +60,7 @@ function createGameScreen() {
 
 let audio = new Audio("audio/alexander_nakarada_superepic.mp3");
 let audioGameOver = new Audio("audio/lesion_x_bad_feelings_cut.mp3");
-let audioClick = new Audio("/audio/diablo_2_skull_gem_sound.mp3")
+let audioClick = new Audio("audio/diablo_2_skull_gem_sound.mp3")
 
 function playMusic(){
   audio.currentTime = 0;
