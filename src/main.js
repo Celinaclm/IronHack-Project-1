@@ -14,7 +14,7 @@ function buildDom(htmlString) {
 function createSplashScreen() {
   splashScreen = buildDom(`
     <main class="main1">
-        <h1><b>KNIGHT VERSUS COCONUTS</b></h1>
+        <h1><b>KNIGHT VS COCONUTS</b></h1>
         <div><button id="start-button">START</button></div>
     </main>
 `);
@@ -60,7 +60,8 @@ function removeGameScreen() {
 function createGameOverScreen(score) {
   gameOverScreen = buildDom(`
   <main class="main2">
-      <h2>SORRY M'LORD<br>YOU HAVE BEEN HIT BY TOO MANY COCONUTS!</h2>
+      <h2>SORRY M'LORD</h2>
+      <p>YOU HAVE BEEN HIT BY TOO MANY COCONUTS!</p>
       <p><b>FINAL SCORE </b><span>${score}</span> </p>
       <div><button id="end-button">TRY AGAIN</button></div>
   </main>

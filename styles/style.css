@@ -37,6 +37,21 @@ html {
     height: 75vh;
   }
 
+  .main2{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 90vh;
+  }
+  .main2 h2{
+    font-size:150px
+  }
+  
+  .main2 p{
+    font-size: 90px;
+  }
+
   .main1 #start-button {
     width: 390px;
     height: 190px;

@@ -8,7 +8,7 @@ class Swallow {
         this.y = 50;
         this.x = canvas.width
         this.image = document.createElement("img");
-        this.image.src = "/img/trueSwallow.png";
+        this.image.src = "./img/trueSwallow.png";
         this.speed = speed;
     }
 
