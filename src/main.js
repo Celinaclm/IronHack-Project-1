@@ -41,8 +41,8 @@ function createGameScreen() {
                 <span class="label"><b>. . . SCORE</b></span>
                 <span class="value"></span>
             </div>
-            <button id="play" onClick="playMusic()"><b>play</b></button>
-            <button id="stop" onClick="stopMusic()"><b>stop</b></button>
+            <button id="play" onClick="playMusic()"><b>GET START THE MUSIC!</b></button>
+            <button id="stop" onClick="stopMusic()"><b>SHUT UP!</b></button>
           </div>
             <img id="palmtree" src="img/palmtree.png" alt="palmtree">
         </header>
@@ -57,7 +57,7 @@ function createGameScreen() {
 }
 
 let audio = new Audio("audio/alexander_nakarada_superepic.mp3");
-let audioGameOver = new Audio("audio/lesion_x_bad_feelings.mp3");
+let audioGameOver = new Audio("audio/lesion_x_bad_feelings_cut.mp3");
 
 function playMusic(){
   audio.currentTime = 0;
@@ -67,7 +67,7 @@ function playMusic(){
 
 function playFinalMusic(){
   audioGameOver.currentTime = 0;
-  audioGameOver.volume = 0.1;
+  audioGameOver.volume = 0.3;
   audioGameOver.play();
 }
 

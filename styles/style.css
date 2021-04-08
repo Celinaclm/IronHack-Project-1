@@ -96,8 +96,44 @@ html {
 .main2 #end-button:focus{
   outline: 0;
 }
-  .main1 h1{
+.main1 h1{
     font-size: 200px;
+  }
+
+  #play{
+    display:inline-block;
+    padding:16px;
+    border:none;
+    border-radius: 10px;
+    background-color: unset;
+    color: black;
+    font-family: The Last Kingdom;
+    font-size:35px;
+    display: flex;
+    margin-left: 50px; 
+  }
+
+
+  #stop{
+    display:inline-block;
+    padding:16px;
+    border:none;
+    border-radius: 10px;
+    background-color: unset;
+    color: black;
+    font-family: The Last Kingdom;
+    font-size:35px;
+    display: flex;
+    margin-left: 50px;
+  }
+
+  #play:hover {
+    background-color: unset;
+    color: rgb(21, 255, 0);
+  }
+  #stop:hover {
+    background-color: unset;
+    color: rgb(255, 38, 0);
   }
   #play,#stop{
     display:inline-block;
