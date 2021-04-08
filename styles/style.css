@@ -99,7 +99,15 @@ html {
   .main1 h1{
     font-size: 200px;
   }
-
+  #play,#stop{
+    display:inline-block;
+    padding:16px;
+    border:none;
+    color: black;
+    display: flex;
+    margin-left: 50px;
+  }
+  iframe{display:none;}
   /* ---- typography ---- */
   /* rgb(0, 217, 255);*/
   body {

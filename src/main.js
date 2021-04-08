@@ -15,7 +15,7 @@ function createSplashScreen() {
   splashScreen = buildDom(`
     <main class="main1">
         <h1><b>KNIGHT VS COCONUTS</b></h1>
-        <div><button id="start-button">START</button></div>
+        <div><button id="start-button" onClick="playMusic()">START</button></div>
     </main>
 `);
 
@@ -41,15 +41,39 @@ function createGameScreen() {
                 <span class="label"><b>. . . SCORE</b></span>
                 <span class="value"></span>
             </div>
+            <button id="play" onClick="playMusic()"><b>play</b></button>
+            <button id="stop" onClick="stopMusic()"><b>stop</b></button>
+          </div>
             <img id="palmtree" src="img/palmtree.png" alt="palmtree">
         </header>
         <div class="canvas-container">
             <canvas></canvas>
         </div>
+        <div id="despertador">
     </main>
 `);
   document.body.appendChild(gameScreen);
   return gameScreen;
+}
+
+let audio = new Audio("audio/alexander_nakarada_superepic.mp3");
+let audioGameOver = new Audio("audio/lesion_x_bad_feelings.mp3");
+
+function playMusic(){
+  audio.currentTime = 0;
+  audio.volume = 0.1;
+  audio.play();
+}
+
+function playFinalMusic(){
+  audioGameOver.currentTime = 0;
+  audioGameOver.volume = 0.1;
+  audioGameOver.play();
+}
+
+function stopMusic(){
+  audio.pause();
+  audioGameOver.pause();
 }
 
 function removeGameScreen() {
@@ -74,6 +98,7 @@ function createGameOverScreen(score) {
 
 function removeGameOverScreen() {
   gameOverScreen.remove();
+  stopMusic();
 }
 
 //Setting the game state - start or game over
@@ -81,6 +106,7 @@ function startGame() {
   removeSplashScreen();
   if (gameOverScreen) {
     removeGameOverScreen();
+    playMusic();
   }
   createGameScreen();
 
@@ -90,8 +116,11 @@ function startGame() {
 
 function endGame(score) {
   removeGameScreen();
+  stopMusic();
   createGameOverScreen(score);
+  playFinalMusic();
 }
 
 //Protection to run in the order correctly
 window.addEventListener("load", createSplashScreen);
+
