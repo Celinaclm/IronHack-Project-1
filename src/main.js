@@ -17,7 +17,7 @@ function createSplashScreen() {
         <h1>KNIGHT VS COCONUTS</h1>
         <p class="rabbit">coming soon...</p>
         <p class="rabbit">expansion <span>Killer Rabbit</span></p>
-        <div><button id="start-button" onClick="playMusic()">START</button></div>
+        <div><button id="start-button" onClick="playClick(), playMusic()">START</button></div>
     </main>
 `);
 
@@ -43,8 +43,8 @@ function createGameScreen() {
                 <span class="label"><b>. . . SCORE</b></span>
                 <span class="value"></span>
             </div>
-            <button id="play" onClick="playMusic()"><b>GET START THE MUSIC!</b></button>
-            <button id="stop" onClick="stopMusic()"><b>SHUT UP!</b></button>
+            <button id="play" onClick="playClick(), playMusic()"><b>GET START THE MUSIC!</b></button>
+            <button id="stop" onClick="playClick(), stopMusic()"><b>SHUT UP!</b></button>
           </div>
             <img id="palmtree" src="img/palmtree.png" alt="palmtree">
         </header>
@@ -60,6 +60,7 @@ function createGameScreen() {
 
 let audio = new Audio("audio/alexander_nakarada_superepic.mp3");
 let audioGameOver = new Audio("audio/lesion_x_bad_feelings_cut.mp3");
+let audioClick = new Audio("/audio/diablo_2_skull_gem_sound.mp3")
 
 function playMusic(){
   audio.currentTime = 0;
@@ -71,6 +72,11 @@ function playFinalMusic(){
   audioGameOver.currentTime = 0;
   audioGameOver.volume = 0.3;
   audioGameOver.play();
+}
+
+function playClick(){
+  audioClick.currenTime = 0;
+  audioClick.play();
 }
 
 function stopMusic(){
@@ -89,7 +95,7 @@ function createGameOverScreen(score) {
       <h2>SORRY M'LORD</h2>
       <p>YOU HAVE BEEN HIT BY TOO MANY COCONUTS!</p>
       <p><b>FINAL SCORE </b><span>${score}</span> </p>
-      <div><button id="end-button">TRY AGAIN</button></div>
+      <div><button id="end-button" onClick="playClick()">TRY AGAIN</button></div>
   </main>
   `);
   const button = gameOverScreen.querySelector("button");
