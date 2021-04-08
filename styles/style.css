@@ -99,27 +99,66 @@ html {
   .main1 h1{
     font-size: 200px;
   }
-  #play,#stop{
+
+.game #play{
+    display:inline-block;
+    padding:16px;
+    border:none;
+    border-radius: 10px;
+    background-color:unset;
+    font-size: 30px;
+    font-family: The Last Kingdom;
+    color: rgb(0, 0, 0);
+    display: flex;
+    margin-left: 50px;
+}
+
+.game #stop{
+  display:inline-block;
+  padding:16px;
+  border:none;
+  border-radius: 10px;
+  background-color:unset;
+  font-size: 30px;
+  font-family: The Last Kingdom;
+  color: rgb(0, 0, 0);
+  display: flex;
+  margin-left: 50px;
+}
+
+.game #play:hover {
+  background-color: unset;
+  color: rgb(43, 255, 0);
+}
+
+.game #stop:hover {
+  background-color: unset;
+  color: rgb(255, 0, 0);
+}
+
+#play,#stop{
     display:inline-block;
     padding:16px;
     border:none;
     color: black;
     display: flex;
     margin-left: 50px;
-  }
-  iframe{display:none;}
+}
+
+iframe{display:none;}
   /* ---- typography ---- */
   /* rgb(0, 217, 255);*/
+
   body {
     color: black;   
     font-size: 32px;
     line-height: 147%;
     font-family: The Last Kingdom;
-  }
+}
   
-  p {
+p {
     margin: 0;
-  }
+}
   
 
   /* ---- layout ---- */
