@@ -39,6 +39,7 @@ class Knight{
 
     removeLife(){
         this.lives -= 1;
+        audioClick.play();
     }
 
     draw(){
